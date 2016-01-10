@@ -19,28 +19,3 @@ To use the library, add
 
 to your source-file and link your executable with
   -lghthash
-
-An example would be:
-  $ gcc -o hash_test -lghthash hash_test.c
-
-to compile the hash_test program (after you've installed the library).
-
-Compilers and linkers other than GCC might work differently, but the
-principle should be the same.
-
-DOCUMENTATION:
-Look in the html/ subdirectory for doxygen-generated
-documentation.
-
-There are a few examples:
-
-- examples/simple.c -  a very basic example of the hash table use.
-- examples/hash_test.c - a more elaborate example.
-- examples/dict_example.c - a more "real" example. Reads a text-file,
-                   stores the words in a table and looks up the words
-                   of another file.
-- examples/interactive.c - lets you try the API interactively
-
-
-// Simon Kagstrom, ska@bth.se
-// Danny Li-on
