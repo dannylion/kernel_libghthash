@@ -60,8 +60,12 @@
 #ifndef GHT_HASH_TABLE_H
 #define GHT_HASH_TABLE_H
 
+#if defined(_WIN32) && defined(_KERNEL_MODE)
+#include <ntddk.h>
+#else
 #include <stdint.h>
 #include <stdlib.h>  /* size_t */
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -81,7 +85,12 @@ extern "C" {
 #endif
 
 /** unsigned 32 bit integer. */
+#if defined(_WIN32) && defined(_KERNEL_MODE)
+typedef UINT32 ght_uint32_t;
+#else
 typedef uint32_t ght_uint32_t;
+#endif
+
 
 /**
  * The structure for hash keys. You should not care about this

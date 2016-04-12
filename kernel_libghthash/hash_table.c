@@ -25,6 +25,10 @@
  *
  ********************************************************************/
 
+#if defined(_WIN32) && defined(_KERNEL_MODE)
+#include <ntddk.h>
+#endif
+
 #include <string.h> /* memcmp */
 
 #include "ght_hash_table.h"
@@ -547,7 +551,7 @@ void *ght_replace(ght_hash_table_t *p_ht,
 }
 
 /* Remove an entry from the hash table. The removed entry, or NULL, is
-   returned (and NOT DefaultFreeFunction'd). */
+   returned (and NOT free'd). */
 void *ght_remove(ght_hash_table_t *p_ht,
 		 unsigned int i_key_size, const void *p_key_data)
 {
@@ -631,7 +635,8 @@ void *ght_first_keysize(ght_hash_table_t *p_ht, ght_iterator_t *p_iterator, cons
 
 static void *next_keysize(ght_hash_table_t *p_ht, ght_iterator_t *p_iterator, const void **pp_key, unsigned int *size)
 {
-  DEBUG_ASSERT(p_ht && p_iterator);
+	UNREFERENCED_PARAMETER(p_ht);
+	DEBUG_ASSERT(p_ht && p_iterator);
 
   if (p_iterator->p_next)
     {
@@ -672,7 +677,7 @@ void *ght_next_keysize(ght_hash_table_t *p_ht, ght_iterator_t *p_iterator, const
 
 
 
-/* Finalize (DefaultFreeFunction) a hash table */
+/* Finalize (free) a hash table */
 void ght_finalize(ght_hash_table_t *p_ht)
 {
   unsigned int i;
@@ -681,7 +686,7 @@ void ght_finalize(ght_hash_table_t *p_ht)
 
   if (p_ht->pp_entries)
     {
-      /* For each bucket, DefaultFreeFunction all entries */
+      /* For each bucket, free all entries */
       for (i=0; i<p_ht->i_size; i++)
 	{
 	  free_entry_chain(p_ht, p_ht->pp_entries[i]);

@@ -30,3 +30,21 @@
 
 # Debug files
 *.dSYM/
+
+# My compilation output directories
+bin/*
+lib/*
+
+# Visual Studio trash files
+*.tlog
+*.log
+*.lastbuildstate
+*.pdb
+*.vcxproj.user
+*.opensdf
+*.sdf
+*.suo
+/TestDriver/Debug/Test.inf
+/TestDriver/Release/Test.inf
+/TestDriver/x64/Debug/Test.inf
+/TestDriver/x64/Release/Test.inf
