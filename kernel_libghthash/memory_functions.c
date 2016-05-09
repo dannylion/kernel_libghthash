@@ -23,7 +23,7 @@
  *
  ********************************************************************/
 
-#include "debug.h"
+#include "DebugMacros.h"
 #include "memory_functions.h"
 
 #if defined(_WIN32) && defined(_KERNEL_MODE)

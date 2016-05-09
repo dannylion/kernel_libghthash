@@ -32,7 +32,7 @@
 #include <string.h> /* memcmp */
 
 #include "ght_hash_table.h"
-#include "debug.h"
+#include "DebugMacros.h"
 #include "memory_functions.h"
 
 #ifdef HAVE_CONFIG_H

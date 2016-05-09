@@ -24,7 +24,7 @@
  * $Id: hash_functions.c 2174 2005-03-18 07:00:30Z ska $
  *
  ********************************************************************/
-#include "debug.h"
+#include "DebugMacros.h"
 
 #include "ght_hash_table.h"
 
