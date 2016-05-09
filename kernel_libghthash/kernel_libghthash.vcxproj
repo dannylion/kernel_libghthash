@@ -24,7 +24,7 @@
     <ClCompile Include="memory_functions.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="debug.h" />
+    <ClInclude Include="DebugMacros.h" />
     <ClInclude Include="ght_hash_table.h" />
     <ClInclude Include="memory_functions.h" />
   </ItemGroup>
@@ -59,7 +59,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-	<Import Project="kernel_libghthash.props" />
+    <Import Project="kernel_libghthash.props" />
   </ImportGroup>
   <PropertyGroup>
     <OutDir>$(SolutionDir)lib\$(ConfigurationName)\$(Platform)\</OutDir>

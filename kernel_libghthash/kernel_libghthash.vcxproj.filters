@@ -32,7 +32,7 @@
     <ClInclude Include="memory_functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="debug.h">
+    <ClInclude Include="DebugMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
